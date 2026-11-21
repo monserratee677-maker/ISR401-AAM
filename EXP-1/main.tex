@@ -61,9 +61,30 @@
 % =====================================================================
 % 10. Trazabilidad
 % =====================================================================
-\begin{frame}{Trazabilidad en Jira}
+\begin{frame}[fragile]{Trazabilidad en Jira}
   \expone{Erick Monserrate}
-  % Contenido pendiente
+  \begin{center}
+    \begin{tikzpicture}[node distance=1.1cm]
+      \node[caja, minimum width=2.2cm] (f) {Visita\\UBU};
+      \node[caja, minimum width=2.2cm, right=of f] (e) {Épica};
+      \node[caja, minimum width=2.2cm, right=of e] (h) {Historia\\REQ-001};
+      \node[caja, minimum width=2.2cm, right=of h] (c) {Commit en\\GitHub};
+      \draw[flecha] (f) -- node[above, font=\scriptsize] {fuente} (e);
+      \draw[flecha] (e) -- (h);
+      \draw[flecha] (h) -- node[above, font=\scriptsize] {clave} (c);
+    \end{tikzpicture}
+  \end{center}
+  \begin{itemize}
+    \item El campo \emph{Fuente} une cada requisito con su origen.
+    \item Los enlaces muestran qué requisitos dependen de otros.
+    \item Con la app GitHub for Jira, un commit que lleva la clave del
+          elemento aparece vinculado a él.
+  \end{itemize}
+  \vspace{-0.2cm}
+  {\footnotesize\textbf{Filtro JQL de ejemplo:}}
+\begin{verbatim}
+project = UTEQFIT AND labels = RF AND status = Aprobado
+\end{verbatim}
 \end{frame}
 
 % =====================================================================
