@@ -121,7 +121,30 @@ project = UTEQFIT AND labels = RF AND status = Aprobado
 % =====================================================================
 \begin{frame}{Comparación con otras alternativas}
   \expone{Erick Monserrate}
-  % Contenido pendiente
+  \footnotesize
+  \renewcommand{\arraystretch}{1.25}
+  \newcolumntype{L}{>{\raggedright\arraybackslash}X}
+  \begin{tabularx}{\textwidth}{>{\bfseries}p{2.2cm} L L L}
+    \toprule
+    Criterio & Jira & Enterprise Architect & ReqIF \\
+    \midrule
+    Qué es        & Gestor de trabajo ágil
+                  & Herramienta de modelado (UML, SysML)
+                  & Formato XML estándar del OMG \cite{omgreqif} \\
+    Requisitos    & Historias de usuario
+                  & Elementos de requisito en el modelo
+                  & Requisitos con atributos y relaciones \\
+    Trazabilidad  & Enlaces entre elementos
+                  & Matriz de relaciones \cite{sparxmatrix}
+                  & Relaciones dentro del archivo \\
+    Uso típico    & Equipos ágiles
+                  & Proyectos con modelado formal
+                  & Intercambio entre empresas y herramientas \cite{ebert2012} \\
+    Cuándo no     & Proyectos regulados que exigen trazabilidad formal
+                  & Equipos pequeños sin necesidad de modelos
+                  & Un solo equipo con una sola herramienta \\
+    \bottomrule
+  \end{tabularx}
 \end{frame}
 
 % =====================================================================
