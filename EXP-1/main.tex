@@ -65,6 +65,17 @@
     \setcounter{enumi}{4}
     \item \textbf{Adaptar el flujo de trabajo} al ciclo de vida del requisito:
   \end{enumerate}
+  \begin{center}
+    \begin{tikzpicture}[node distance=0.45cm]
+      \node[caja, minimum width=2cm] (p) {Propuesto};
+      \node[caja, minimum width=2cm, right=of p] (a) {En análisis};
+      \node[caja, minimum width=2cm, right=of a] (v) {Validado};
+      \node[caja, minimum width=2cm, right=of v, fill=green!12] (ap) {Aprobado};
+      \draw[flecha] (p) -- (a);
+      \draw[flecha] (a) -- (v);
+      \draw[flecha] (v) -- (ap);
+    \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 
