@@ -1,59 +1,51 @@
 # EXP-1 · GA-SUM-02
 
-Exposición sobre herramientas automatizadas de gestión de requisitos (Jira), aplicada al caso UteqFit-AI.
-Grupo AAM · ISR-401 · UTEQ.
+Exposición sobre herramientas automatizadas para gestionar requisitos, aplicada al caso UteqFit-AI.
 
-## Estructura
+## Archivos
 
-```
-EXP-1/
-├── README.md         Este archivo
-├── main.tex          Diapositivas (Beamer)
-├── referencias.bib   Referencias IEEE
-├── main.pdf          PDF compilado
-├── figuras/          Capturas y figuras propias
-└── evidencias/       Exportación de Jira (CSV) y otras evidencias
-```
+- `main.tex`: presentación Beamer.
+- `referencias.bib`: fuentes citadas en estilo IEEE.
+- `main.pdf`: PDF compilado.
+- `compilar.py`: script de compilación con Tectonic.
+- `figuras/`: capturas y figuras.
+- `evidencias/`: exportaciones de Jira y otros respaldos.
 
-## Compilación
+## Requisitos
 
-- Compilador: pdfLaTeX
-- Archivo principal: `main.tex`
-- Distribución probada: TeX Live 2024 (o MiKTeX actualizado)
-- Paquetes: beamer, babel (spanish), graphicx, booktabs, tabularx, xcolor, tikz, lmodern
-- Estilo bibliográfico: `IEEEtran.bst` (paquete `ieeetran` de TeX Live)
+- Python 3.8 o posterior.
+- Tectonic. El script lo busca en el `PATH` y en la carpeta habitual de instalación de Windows. Si no lo encuentra, ofrece instalar el ejecutable oficial y agregarlo al `PATH` del usuario. Después de instalarlo, las siguientes ejecuciones compilan directamente.
 
-Opción 1 (automática), desde esta carpeta:
+## Compilar
 
-```
-latexmk -pdf main.tex
+Abre una terminal en esta carpeta y ejecuta:
+
+```powershell
+python .\compilar.py
 ```
 
-Opción 2 (manual, en este orden), desde esta carpeta:
+También puedes usar `py .\compilar.py` si ese es el comando configurado en tu equipo. El script compila `main.tex`, resuelve las referencias y deja el PDF final en `main.pdf`; los archivos intermedios quedan en `build/`.
 
+Para ejecutar Tectonic directamente:
+
+```powershell
+tectonic --outdir build main.tex
 ```
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
-```
+
+La primera compilación necesita conexión a Internet para descargar los recursos de LaTeX que todavía no estén en caché.
 
 ## Demostración en Jira (diapositivas 7 a 9)
 
-Caso de práctica: UteqFit-AI, sistema para el Gimnasio Universitario (UBU) de la UTEQ.
+El caso es UteqFit-AI, un sistema para el Gimnasio Universitario (UBU) de la UTEQ. El espacio usa plantilla Scrum; sus épicas representan módulos y las historias se clasifican como `RF` o `RNF`. Cada historia registra el ID, prioridad MoSCoW, fuente y criterio de aceptación.
 
-- Espacio: **UteqFit-AI** (clave `UTEQFIT`), plantilla Scrum, plan gratuito de Jira Cloud.
-- Épicas por módulo del sistema; historias de usuario con etiqueta `RF` o `RNF`.
-- Campos de cada historia: ID del requisito, prioridad MoSCoW, fuente (técnica de elicitación y fecha) y criterio de aceptación.
-- Capturas en `figuras/`: `tablero.png`, `requisito.png` y `flujo.png`.
-- Exportación CSV de los requisitos en `evidencias/jira_export.csv`.
+Las capturas del tablero, el requisito `REQ-001` y el flujo se guardan en `figuras/`. La exportación de Jira se encuentra en `evidencias/jira_export.csv`.
 
-### Flujo de trabajo de los requisitos
+El flujo configurado es:
 
-```
+```text
 Propuesto → En análisis → Validado → Aprobado
                  ↑            │
                  └─rechazado──┘
 ```
 
-Filtro JQL de ejemplo: `project = UTEQFIT AND labels = RF AND status = Aprobado`
+Filtro JQL de ejemplo: `project = UTEQFIT AND labels = RF AND status = Aprobado`.
