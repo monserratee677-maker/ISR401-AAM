@@ -47,3 +47,13 @@ Caso de práctica: UteqFit-AI, sistema para el Gimnasio Universitario (UBU) de l
 - Campos de cada historia: ID del requisito, prioridad MoSCoW, fuente (técnica de elicitación y fecha) y criterio de aceptación.
 - Capturas en `figuras/`: `tablero.png`, `requisito.png` y `flujo.png`.
 - Exportación CSV de los requisitos en `evidencias/jira_export.csv`.
+
+### Flujo de trabajo de los requisitos
+
+```
+Propuesto → En análisis → Validado → Aprobado
+                 ↑            │
+                 └─rechazado──┘
+```
+
+Filtro JQL de ejemplo: `project = UTEQFIT AND labels = RF AND status = Aprobado`
