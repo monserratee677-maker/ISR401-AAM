@@ -54,7 +54,40 @@
   \titlepage
 \end{frame}
 
-% --- Aquí van las diapositivas 2 a 5 (Rai Álvarez) ---
+% =====================================================================
+% 2. Gestión de requisitos y herramientas
+% =====================================================================
+\begin{frame}{Gestión de requisitos y herramientas}
+  \expone{Rai Álvarez}
+  \begin{columns}[c]
+    \begin{column}{0.5\textwidth}
+      \begin{itemize}
+        \item La gestión de requisitos mantiene los requisitos identificados,
+              priorizados, versionados y trazables durante todo el proyecto
+              \cite{ireb2026,pohl2025}.
+        \item Con muchos requisitos y varios interesados, una hoja de cálculo
+              ya no alcanza.
+        \item Las herramientas automatizadas guardan cada requisito con sus
+              atributos, su estado y sus relaciones \cite{swebok2024}.
+      \end{itemize}
+    \end{column}
+    \begin{column}{0.48\textwidth}
+      \centering
+      \begin{tikzpicture}[node distance=0.5cm and 0.6cm]
+        \node[caja] (eli) {Elicitar};
+        \node[caja, right=of eli] (doc) {Documentar};
+        \node[caja, below=of doc] (val) {Validar};
+        \node[caja, below=of eli] (ges) {Gestionar\\cambios};
+        \draw[flecha] (eli) -- (doc);
+        \draw[flecha] (doc) -- (val);
+        \draw[flecha] (val) -- (ges);
+        \draw[flecha] (ges) -- (eli);
+        \node[below=0.25cm of $(ges.south)!0.5!(val.south)$, font=\scriptsize,
+              text=gray] {La herramienta apoya todo el ciclo};
+      \end{tikzpicture}
+    \end{column}
+  \end{columns}
+\end{frame}
 
 % =====================================================================
 % 6. Pasos de aplicación (2/2)
