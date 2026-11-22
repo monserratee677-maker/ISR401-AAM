@@ -74,6 +74,8 @@
       \draw[flecha] (p) -- (a);
       \draw[flecha] (a) -- (v);
       \draw[flecha] (v) -- (ap);
+      \draw[flecha, dashed] (v.south) to[bend left=25]
+        node[below, font=\scriptsize] {rechazado} (a.south);
     \end{tikzpicture}
   \end{center}
 \end{frame}
