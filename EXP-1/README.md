@@ -37,3 +37,13 @@ bibtex main
 pdflatex main.tex
 pdflatex main.tex
 ```
+
+## Demostración en Jira (diapositivas 7 a 9)
+
+Caso de práctica: UteqFit-AI, sistema para el Gimnasio Universitario (UBU) de la UTEQ.
+
+- Espacio: **UteqFit-AI** (clave `UTEQFIT`), plantilla Scrum, plan gratuito de Jira Cloud.
+- Épicas por módulo del sistema; historias de usuario con etiqueta `RF` o `RNF`.
+- Campos de cada historia: ID del requisito, prioridad MoSCoW, fuente (técnica de elicitación y fecha) y criterio de aceptación.
+- Capturas en `figuras/`: `tablero.png`, `requisito.png` y `flujo.png`.
+- Exportación CSV de los requisitos en `evidencias/jira_export.csv`.
